@@ -5,19 +5,21 @@ import { IJugador } from './IJugador';
 import Tablero from './Tablero';
 
 
-export class Jugador extends React.Component<any, IJugadorState> {
+export class Jugador extends React.Component<IJugador, IJugadorState> {
     constructor(props: IJugador) {
         super(props);
         this.state = {
             id: 0,
             nameUser: '',
-            visible: false
+            visible: false,
+            ganador: false
         };
+        this.NewGame = this.NewGame.bind(this);
     }
     NewGame(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         this.setState({
-            nameUser: this.props.nameUser,
+            nameUser: this.state.nameUser,
             visible: true
         })
         console.log(this.state.nameUser + "editado");
@@ -50,7 +52,12 @@ export class Jugador extends React.Component<any, IJugadorState> {
                         </div>
                         : null}
                     <h1>{this.state.nameUser}</h1>
-                    {this.state.visible ? <Tablero /> : null}
+                    {this.state.visible ? <Tablero 
+                    nameUser={this.state.nameUser}
+                    id={this.state.id}
+                    visible={this.state.visible}
+                    ganador={this.state.visible}
+                    /> : null}
                 </div>
             </div>
         );
@@ -59,6 +66,7 @@ export class Jugador extends React.Component<any, IJugadorState> {
 interface IJugadorState {
     id: number,
     nameUser: string,
-    visible: boolean
+    visible: boolean,
+    ganador: boolean
 }
 export default Jugador;

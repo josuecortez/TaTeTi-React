@@ -1,13 +1,25 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/tablero.css";
+import { IJugador } from './IJugador';
 
-export class Tablero extends React.Component<any, any> {
+export class Tablero extends React.Component<IJugador, IJugadorState> {
+  constructor(props:IJugador){
+    super(props);
+    this.state = {
+      id: this.props.id,
+      nameUser: this.props.nameUser,
+      ganador: this.props.ganador,
+      visible: this.props.visible
+    };
+    console.log(this.state.nameUser);
+    console.log(this.props.nameUser);
+  }
   render() {
     return (
       <div className="card card-body">
         <div className="row">
-          <button className="btn btn-primary col-md-4" disabled>
+          <button className="btn btn-primary col-md-4" disabled={this.state.ganador}>
             Volver a jugar
           </button>
           <button className="btn btn-danger col-md-4 offset-md-3">
@@ -17,7 +29,7 @@ export class Tablero extends React.Component<any, any> {
         <div className="row">
           <div className="col-md-6">
             <div className="col">
-              <p className="lead text-muted" id="turno"></p>
+            <p className="lead text-muted" id="turno">El turno es de {this.state.nameUser}</p>
               <div className="tablero" id="tablero">
                 <div className="celda" id="0"></div>
                 <div className="celda" id="1"></div>
@@ -64,5 +76,10 @@ export class Tablero extends React.Component<any, any> {
     );
   }
 }
-
+interface IJugadorState {
+  id: number,
+  nameUser: string,
+  ganador: boolean,
+  visible: boolean
+}
 export default Tablero;
