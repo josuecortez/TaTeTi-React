@@ -56,7 +56,7 @@ export class Jugador extends React.Component<IJugador, IJugadorState> {
                     nameUser={this.state.nameUser}
                     id={this.state.id}
                     visible={this.state.visible}
-                    ganador={this.state.visible}
+                    ganador={this.state.ganador}
                     /> : null}
                 </div>
             </div>
