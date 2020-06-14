@@ -1,5 +1,7 @@
-## TATETI CON REACT
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FrontEnd en React para catedra Programacion avanzada de un juego tateti
+
+## Intrucciones de uso 
+
 
 ##  Scripts
 
@@ -22,4 +24,7 @@ Soportado pero no implementado.
 Funciona con back-end 
 You can learn more in the [Api-tateti con Node y Express](https://github.com/josuecortez/ApiTateti.git).
 Donde se encuentran las instrucciones de uso
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
