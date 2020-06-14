@@ -21,8 +21,7 @@ Soportado pero no implementado.
 
 ## Importante
 
-Funciona con back-end 
-You can learn more in the [Api-tateti con Node y Express](https://github.com/josuecortez/ApiTateti.git).
+Funciona con back-end [Api-tateti con Node y Express](https://github.com/josuecortez/ApiTateti.git).
 Donde se encuentran las instrucciones de uso
 
 
