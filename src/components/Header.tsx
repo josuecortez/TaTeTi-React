@@ -6,7 +6,9 @@ function Header(){
     <header>
         <div className="navbar navbar-dark bg-dark box-shadow">
             <div className="container d-flex justify-content-between">
-                <a href="none" className="navbar-brand d-flex align-items-center">
+                <a href="none"
+                 className="navbar-brand d-flex align-items-center"
+                 >
                     <strong>Bienvenido a TaTeTi</strong>
                 </a>    
             </div>

@@ -30,7 +30,7 @@ export class Tablero extends React.Component<any, any> {
     if (this.props.id) {
       console.log("entro al if");
       axios
-        .get("http://localhost:3001/tablero", {
+        .get("http://localhost:3001/board", {
           headers: { id: this.props.id },
         })
         .then((response) => {
@@ -94,8 +94,8 @@ export class Tablero extends React.Component<any, any> {
   }
   reiniciarHistorial() {
     axios
-      .get("http://localhost:3001/reiniciarHistorial/", {
-        headers: { id: this.props.id },
+      .put("http://localhost:3001/board/"+this.props.id+"/resetHistory/", {
+       
       })
       .then((response) => {
         if (!response.data.msgError) {
@@ -129,7 +129,7 @@ export class Tablero extends React.Component<any, any> {
       ganador: false,
     });
     axios
-      .get("http://localhost:3001/tableroReiniciar/", {
+      .put("http://localhost:3001/board/"+this.props.id+"/reset/", {
         headers: { id: this.props.id },
       })
       .then((response) => {
@@ -181,7 +181,7 @@ export class Tablero extends React.Component<any, any> {
     let idCelda = i + 1;
     //traer el tablero
     axios
-      .get("http://localhost:3001/tablero/" + idCelda, {
+      .get("http://localhost:3001/board/" + idCelda, {
         headers: { id: this.props.id },
       })
       .then((response) => {
